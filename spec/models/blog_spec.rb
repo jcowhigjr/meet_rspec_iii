@@ -7,7 +7,7 @@ describe Blog do
     Blog.new(title:"My Blog", comments_feed_url:"http://example.com/comments/feed")
   }
 
-describe "attributes" do
+  describe "attributes" do
     it { expect(blog).to validate_presence_of :title }
     it { expect(blog).to validate_uniqueness_of :title }
 

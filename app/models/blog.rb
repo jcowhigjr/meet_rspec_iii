@@ -11,8 +11,8 @@ class Blog < ActiveRecord::Base
       #TODO remember proxy_association
       comments_feed_url = proxy_association.owner.comments_feed_url
       comment_data = Wordpress::Comments::Client.new(comments_feed_url).fetch
-      create_from_wordpress_cient_attributes comment_data
-   end
+      create_from_wordpress_client_attributes comment_data
+    end
 
     def create_from_wordpress_client_attributes comment_data
       comment_data.map do |a_comment|
@@ -24,7 +24,6 @@ class Blog < ActiveRecord::Base
         end
       end
 
-      end
     end
   end
 
